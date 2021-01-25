@@ -26,6 +26,7 @@ code {
   border: 1px solid white;
 }
 .SideBar {
+  transition: 0.5s all ease;
   width: 100vh;
   height: 100vh;
   background-color: black;
