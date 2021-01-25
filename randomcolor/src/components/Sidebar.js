@@ -26,7 +26,7 @@ export default function SideBar(props) {
       >
         Generate random color hex code
       </button>
-      <p>The hexcode is: {random} </p>
+      <p className="hexcodeis"> The hexcode is: {random} </p>
     </div>
   );
 }

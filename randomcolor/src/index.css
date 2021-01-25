@@ -16,11 +16,22 @@ code {
   display: inline-flex;
 }
 .SideBar {
-  width: 200px;
+  width: 100vh;
   height: 100vh;
   background-color: black;
   color: azure;
 }
+.hexcodeis {
+  background-color: black;
+  border: 1px solid white;
+}
+.SideBar {
+  width: 100vh;
+  height: 100vh;
+  background-color: black;
+  color: azure;
+}
+
 .Box {
   background-color: beige;
   height: 100vh;
