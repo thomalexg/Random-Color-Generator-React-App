@@ -4,7 +4,7 @@ import React from 'react';
 
 export default function SideBar(props) {
   return (
-    <div className="SideBar" style={{ backgroundColor: `${props.random}` }}>
+    <div className="SideBar" style={{ backgroundColor: 'black' }}>
       <button
         className="SideBarButton"
         onClick={() => {

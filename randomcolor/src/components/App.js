@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Box from './Box';
 import SideBar from './Sidebar.js';
 
 // export default function App() {
@@ -26,12 +27,8 @@ export default function App() {
 
   return (
     <div className="App">
-      {/* <Box random={random}></Box> */}
-      <SideBar
-        random={random}
-        setRandom={setRandom}
-        randomHex={randomHex}
-      />
+      <SideBar random={random} setRandom={setRandom} randomHex={randomHex} />
+      <Box random={random}></Box> }
     </div>
   );
 }

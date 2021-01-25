@@ -16,25 +16,21 @@ code {
   display: inline-flex;
 }
 .SideBar {
-  width: 100vh;
+  width: 100vw;
   height: 100vh;
   background-color: black;
   color: azure;
 }
-.hexcodeis {
-  background-color: black;
-  border: 1px solid white;
-}
 .SideBar {
-  transition: 0.5s all ease;
-  width: 100vw;
+  width: 300px;
   height: 100vh;
   background-color: black;
   color: azure;
 }
 
 .Box {
+  transition: 0.5s all ease;
   background-color: beige;
-  height: 100vh;
-  width: 100vh;
+  height: 100rem;
+  width: 100rem;
 }
