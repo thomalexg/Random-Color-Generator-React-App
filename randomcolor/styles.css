@@ -1,0 +1,9 @@
+.App {
+  width: 100vh;
+  height: 100vh;
+}
+.SideBar {
+  width: 20vh;
+  height: 100vh;
+  background-color: black;
+}
