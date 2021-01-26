@@ -2,8 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Box from './Box';
 import SideBar from './Sidebar.js';
 import Square from './Square';
-var randomColor = require('randomcolor'); // import the script
-var color = randomColor(); // a hex code for an attractive color
+const randomColor = require('randomcolor'); // import the script
 
 // const hexArr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'a', 'b', 'c', 'd', 'e', 'f'];
 
@@ -24,26 +23,29 @@ export default function App() {
   const [squarePositionY, setSquarePositionY] = useState(500);
   const [speedX, setSpeedX] = useState(5);
   const [speedY, setSpeedY] = useState(5);
+  //
+  const [hue, setHue] = useState('random');
+  const [luminosity, setLuminosity] = useState('random');
 
   useEffect(() => {
     if (btnMode === 'Stop') {
       if (squarePositionY >= 700 && speedY > 0) {
         setSpeedY(speedY * -1);
-        setRandom(randomColor());
+        setRandom(randomColor({ hue, luminosity }));
       }
       if (squarePositionY <= 0 && speedY < 0) {
         setSpeedY(speedY * -1);
-        setRandom(randomColor());
+        setRandom(randomColor({ hue, luminosity }));
       }
       if (squarePositionX <= 300 && speedX < 0) {
         setSpeedX(speedX * -1);
         console.log(speedX);
-        setRandom(randomColor());
+        setRandom(randomColor({ hue, luminosity }));
       }
       if (squarePositionX >= 1400 && speedX > 0) {
         setSpeedX(speedX * -1);
         console.log(speedX);
-        setRandom(randomColor());
+        setRandom(randomColor({ hue, luminosity }));
       }
       const interval = setInterval(() => {
         setSquarePositionY(squarePositionY + speedY);
@@ -53,7 +55,15 @@ export default function App() {
         clearInterval(interval);
       };
     }
-  }, [btnMode, squarePositionX, squarePositionY, speedX, speedY]);
+  }, [
+    btnMode,
+    squarePositionX,
+    squarePositionY,
+    speedX,
+    speedY,
+    hue,
+    luminosity,
+  ]);
 
   return (
     <div className="App">
@@ -61,6 +71,10 @@ export default function App() {
         random={random}
         setRandom={setRandom}
         randomColor={randomColor}
+        hue={hue}
+        setHue={setHue}
+        luminosity={luminosity}
+        setLuminosity={setLuminosity}
         // randomHex={randomHex}
         btnMode={btnMode}
         setBtnMode={setBtnMode}
