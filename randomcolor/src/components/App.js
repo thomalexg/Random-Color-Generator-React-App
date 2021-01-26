@@ -28,7 +28,7 @@ export default function App() {
   const [luminosity, setLuminosity] = useState('random');
   //
   const [height, setHeight] = useState(800);
-  const [width, setWidth] = useState(1500);
+  const [width, setWidth] = useState(1800);
 
   useEffect(() => {
     if (btnMode === 'Stop') {
@@ -40,7 +40,7 @@ export default function App() {
         setSpeedY(speedY * -1);
         setRandom(randomColor({ hue, luminosity }));
       }
-      if (squarePositionX <= 300 && speedX < 0) {
+      if (squarePositionX <= 250 && speedX < 0) {
         setSpeedX(speedX * -1);
         console.log(speedX);
         setRandom(randomColor({ hue, luminosity }));

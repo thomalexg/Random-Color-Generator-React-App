@@ -50,6 +50,15 @@ export default function SideBar(props) {
         <option value="dark">dark</option>
         <option value="bright">bright</option>
       </select>
+      <input
+        type="text"
+        placeholder="width(Number)"
+        defaultValue="500"
+        onClick={(e) => {
+          e.preventDefault();
+          props.setWidth(e.target.value);
+        }}
+      />
       <button
         className="StartSquareBtn"
         onClick={() => {
