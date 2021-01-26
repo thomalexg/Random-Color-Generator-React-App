@@ -34,3 +34,12 @@ code {
   height: 100rem;
   width: 100rem;
 }
+.Square {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  margin-top: 30px;
+  margin-left: 300px;
+  z-index: 10000;
+  background-color: coral;
+}
