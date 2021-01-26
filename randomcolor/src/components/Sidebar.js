@@ -17,7 +17,7 @@ export default function SideBar(props) {
       <button
         className="CreateRandomColorBtn"
         onClick={() => {
-          props.setRandom(props.randomHex());
+          props.setRandom(props.randomColor());
         }}
       >
         Generate random color hex code
