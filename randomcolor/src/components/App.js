@@ -27,13 +27,14 @@ const randomHex = () => {
 export default function App() {
   const [random, setRandom] = useState('#0f664f');
   const [btnMode, setBtnMode] = useState('Start');
-  const [squarePositionX, setSquarePositionX] = useState(500);
+  const [squarePositionX, setSquarePositionX] = useState(660);
   const [squarePositionY, setSquarePositionY] = useState(500);
-  const [speedX, setSpeedX] = useState(30);
-  const [speedY, setSpeedY] = useState(30);
+  // const speedX = useRef(100);
+  // const speedY = useRef(100);
+  const [speedX, setSpeedX] = useState(100);
+  const [speedY, setSpeedY] = useState(100);
   // let speedX = 5;
   // let speedY = 5;
-
   // const hexArr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'a', 'b', 'c', 'd', 'e', 'f'];
 
   // const randomHex = () => {
@@ -47,24 +48,38 @@ export default function App() {
   // };
   useEffect(() => {
     if (btnMode === 'Stop') {
-      if (squarePositionY >= 700 || squarePositionY <= 0) {
-        speedY = -speedY;
+      if (squarePositionY >= 700 && speedY > 0) {
+        setSpeedY(speedY * -1);
+        // speedY *= -1;
         setRandom(randomHex());
       }
-      if (squarePositionX <= 300 || squarePositionX >= 1400) {
-        speedX = -speedX;
+      if (squarePositionY <= 0 && speedY < 0) {
+        setSpeedY(speedY * -1);
+        // speedY *= -1;
+        setRandom(randomHex());
+      }
+      if (squarePositionX <= 300 && speedX < 0) {
+        setSpeedX(speedX * -1);
+        // speedX *= -1;
+        console.log(speedX);
+        setRandom(randomHex());
+      }
+      if (squarePositionX >= 1400 && speedX > 0) {
+        setSpeedX(speedX * -1);
+        // speedX *= -1;
+        console.log(speedX);
         setRandom(randomHex());
       }
       const interval = setInterval(() => {
         setSquarePositionY(squarePositionY + speedY);
         setSquarePositionX(squarePositionX + speedX);
         // setRandom(randomHex());
-      }, 350);
+      }, 500);
       return () => {
         clearInterval(interval);
       };
     }
-  }, [btnMode, squarePositionX, squarePositionY]);
+  }, [btnMode, squarePositionX, squarePositionY, speedX, speedY]);
   //   const changePosition = () => {
   // if (squarePositionY >= 700 || squarePositionY <= 0) {
   //   speedY = -speedY;
