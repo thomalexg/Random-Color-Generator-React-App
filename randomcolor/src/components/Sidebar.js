@@ -3,6 +3,15 @@ import React from 'react';
 //randomHex();
 
 export default function SideBar(props) {
+  const startStop = () => {
+    if (props.btnMode === 'Start') {
+      props.setBtnMode('Stop');
+      // props.changePosition();
+    } else {
+      props.setBtnMode('Start');
+      // clearInterval(props.changePosition());
+    }
+  };
   return (
     <div className="SideBar" style={{ backgroundColor: 'black' }}>
       <button
@@ -18,8 +27,9 @@ export default function SideBar(props) {
       <button
         className="StartSquareBtn"
         onClick={() => {
-          props.setBtnMode(props.btnMode === 'Start' ? 'Stop' : 'Start');
-          changePosition();
+          startStop();
+          // props.setBtnMode(props.btnMode === 'Start' ? 'Stop' : 'Start');
+          // props.changePosition();
         }}
       >
         {props.btnMode}
