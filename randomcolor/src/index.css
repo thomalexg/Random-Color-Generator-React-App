@@ -25,15 +25,14 @@ code {
 }
 .SideBar {
   width: 300px;
-  height: 800px;
+  height: 100%;
   background-color: black;
   color: azure;
 }
 .Box {
   transition: 0.5s all ease;
   background-color: beige;
-  height: 800px;
-  width: 1200px;
+  height: 100%;
 }
 .Square {
   width: 100px;

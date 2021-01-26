@@ -1,7 +1,10 @@
 import React from 'react';
 
 export default function Box(props) {
-  return (
-    <div className="Box" style={{ backgroundColor: `${props.random}` }}></div>
-  );
+  const styleBox = {
+    backgroundColor: props.random,
+    width: props.width,
+    height: props.height,
+  };
+  return <div className="Box" style={styleBox}></div>;
 }

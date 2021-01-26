@@ -26,10 +26,13 @@ export default function App() {
   //
   const [hue, setHue] = useState('random');
   const [luminosity, setLuminosity] = useState('random');
+  //
+  const [height, setHeight] = useState(800);
+  const [width, setWidth] = useState(1500);
 
   useEffect(() => {
     if (btnMode === 'Stop') {
-      if (squarePositionY >= 700 && speedY > 0) {
+      if (squarePositionY >= height - 100 && speedY > 0) {
         setSpeedY(speedY * -1);
         setRandom(randomColor({ hue, luminosity }));
       }
@@ -42,7 +45,7 @@ export default function App() {
         console.log(speedX);
         setRandom(randomColor({ hue, luminosity }));
       }
-      if (squarePositionX >= 1400 && speedX > 0) {
+      if (squarePositionX >= width - 100 && speedX > 0) {
         setSpeedX(speedX * -1);
         console.log(speedX);
         setRandom(randomColor({ hue, luminosity }));
@@ -63,11 +66,18 @@ export default function App() {
     speedY,
     hue,
     luminosity,
+    width,
+    height,
   ]);
 
+  const styleApp = { width, height };
   return (
-    <div className="App">
+    <div className="App" style={styleApp}>
       <SideBar
+        width={width}
+        setWidth={setWidth}
+        height={height}
+        setHeight={setHeight}
         random={random}
         setRandom={setRandom}
         randomColor={randomColor}
@@ -80,7 +90,13 @@ export default function App() {
         setBtnMode={setBtnMode}
         // changePosition={changePosition}
       />
-      <Box random={random}></Box>
+      <Box
+        random={random}
+        width={width}
+        setWidth={setWidth}
+        height={height}
+        setHeight={setHeight}
+      ></Box>
       <Square
         squarePositionX={squarePositionX}
         setSquarePositionX={setSquarePositionX}
