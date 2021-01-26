@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import Box from './Box';
 import SideBar from './Sidebar.js';
 import Square from './Square';
+var randomColor = require('randomcolor'); // import the script
+var color = randomColor(); // a hex code for an attractive color
 
 // export default function App() {
 //   return (
@@ -31,8 +33,8 @@ export default function App() {
   const [squarePositionY, setSquarePositionY] = useState(500);
   // const speedX = useRef(100);
   // const speedY = useRef(100);
-  const [speedX, setSpeedX] = useState(100);
-  const [speedY, setSpeedY] = useState(100);
+  const [speedX, setSpeedX] = useState(5);
+  const [speedY, setSpeedY] = useState(5);
   // let speedX = 5;
   // let speedY = 5;
   // const hexArr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'a', 'b', 'c', 'd', 'e', 'f'];
@@ -74,7 +76,7 @@ export default function App() {
         setSquarePositionY(squarePositionY + speedY);
         setSquarePositionX(squarePositionX + speedX);
         // setRandom(randomHex());
-      }, 500);
+      }, 10);
       return () => {
         clearInterval(interval);
       };
