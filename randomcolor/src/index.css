@@ -1,3 +1,7 @@
+* {
+  margin: 0;
+  padding: 0;
+}
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -13,33 +17,32 @@ code {
 }
 
 .App {
+  margin: auto;
   display: inline-flex;
-}
-.SideBar {
-  width: 100vw;
-  height: 100vh;
-  background-color: black;
-  color: azure;
+  width: 1500px;
+  height: 800px;
+  overflow: hidden;
 }
 .SideBar {
   width: 300px;
-  height: 100vh;
+  height: 800px;
   background-color: black;
   color: azure;
 }
-
 .Box {
   transition: 0.5s all ease;
   background-color: beige;
-  height: 100rem;
-  width: 100rem;
+  height: 800px;
+  width: 1200px;
 }
 .Square {
   width: 100px;
   height: 100px;
   position: absolute;
-  margin-top: 30px;
-  margin-left: 300px;
+  /*
+  margin-top: 300px;
+  margin-left: 500px;
+  */
   z-index: 10000;
   background-color: coral;
 }

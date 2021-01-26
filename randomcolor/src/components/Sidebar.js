@@ -17,9 +17,10 @@ export default function SideBar(props) {
 
       <button
         className="StartSquareBtn"
-        onClick={() =>
-          props.setBtnMode(props.btnMode === 'Start' ? 'Stop' : 'Start')
-        }
+        onClick={() => {
+          props.setBtnMode(props.btnMode === 'Start' ? 'Stop' : 'Start');
+          changePosition();
+        }}
       >
         {props.btnMode}
       </button>
