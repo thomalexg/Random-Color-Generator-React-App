@@ -28,7 +28,7 @@ export default function App() {
   const [luminosity, setLuminosity] = useState('random');
   //
   const [height, setHeight] = useState(800);
-  const [width, setWidth] = useState(1800);
+  const [width, setWidth] = useState(1000);
 
   useEffect(() => {
     if (btnMode === 'Stop') {

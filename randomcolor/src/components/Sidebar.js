@@ -53,10 +53,9 @@ export default function SideBar(props) {
       <input
         type="text"
         placeholder="width(Number)"
-        defaultValue="500"
-        onClick={(e) => {
-          e.preventDefault();
-          props.setWidth(e.target.value);
+        value={props.width}
+        onChange={(e) => {
+          props.setWidth(Number(e.target.value));
         }}
       />
       <button
