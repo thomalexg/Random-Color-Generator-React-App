@@ -5,5 +5,5 @@ export default function Square(props) {
     marginLeft: props.squarePositionX,
     marginTop: props.squarePositionY,
   };
-  return <div className="Square" style={squarePosition}></div>;
+  return <div className="Square" style={squarePosition} />;
 }

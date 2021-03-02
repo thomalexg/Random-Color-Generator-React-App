@@ -1,7 +1,5 @@
 import React from 'react';
 
-//randomHex();
-
 export default function SideBar(props) {
   const startStop = () => {
     if (props.btnMode === 'Start') {
@@ -25,14 +23,14 @@ export default function SideBar(props) {
         Generate random color hex code
       </button>
       <p className="hexcodeis"> The hexcode is: {props.random} </p>
-      <label>Choose a color:</label>
+      <label Htmlfor="color">Choose a color:</label>
       <select
         id="color"
         className="SelectColor"
         value={props.hue}
         onChange={(e) => props.setHue(e.target.value)}
       >
-        <option value=""></option>
+        <option value="" />
         <option value="green">green</option>
         <option value="blue">blue</option>
         <option value="yellow">yellow</option>
@@ -45,7 +43,7 @@ export default function SideBar(props) {
         value={props.luminosity}
         onChange={(e) => props.setLuminosity(e.target.value)}
       >
-        <option value=""></option>
+        <option value="" />
         <option value="light">light</option>
         <option value="dark">dark</option>
         <option value="bright">bright</option>
@@ -62,8 +60,6 @@ export default function SideBar(props) {
         className="StartSquareBtn"
         onClick={() => {
           startStop();
-          // props.setBtnMode(props.btnMode === 'Start' ? 'Stop' : 'Start');
-          // props.changePosition();
         }}
       >
         {props.btnMode}

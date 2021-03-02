@@ -1,20 +1,11 @@
 import React, { useEffect, useState } from 'react';
+// eslint-disable-next-line @typescript-eslint/naming-convention
 import Box from './Box';
+// eslint-disable-next-line @typescript-eslint/naming-convention
 import SideBar from './Sidebar.js';
+// eslint-disable-next-line @typescript-eslint/naming-convention
 import Square from './Square';
 const randomColor = require('randomcolor'); // import the script
-
-// const hexArr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'a', 'b', 'c', 'd', 'e', 'f'];
-
-// const randomHex = () => {
-//   let hex = '';
-//   hex += '#';
-//   for (let i = 1; i <= 6; i++) {
-//     let random = Math.floor(Math.random() * 16);
-//     hex += hexArr[random];
-//   }
-//   return hex;
-// };
 
 export default function App() {
   const [random, setRandom] = useState('#0f664f');
