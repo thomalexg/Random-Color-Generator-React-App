@@ -87,13 +87,13 @@ export default function App() {
         setWidth={setWidth}
         height={height}
         setHeight={setHeight}
-      ></Box>
+      />
       <Square
         squarePositionX={squarePositionX}
         setSquarePositionX={setSquarePositionX}
         squarePositionY={squarePositionY}
         setSquarePositionY={setSquarePositionY}
-      ></Square>
+      />
     </div>
   );
 }
